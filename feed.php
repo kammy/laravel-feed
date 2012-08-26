@@ -29,7 +29,7 @@ class Feed
     /**
      * Returns aggregated feed with all $items
      */
-    public function render($format = 'rss')
+    public function render($format = 'atom')
     {
         $channel = array(
             'title'=>$this->title,

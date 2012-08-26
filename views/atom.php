@@ -6,14 +6,15 @@
         <description><?php echo $channel['description'] ?></description>
         <atom:link href="<?php echo $channel['link'] ?>" rel="self"></atom:link>
         <language><?php echo Config::get('application.language') ?></language>
-        <lastBuildDate><?php echo date('D, d M Y H:i:s P', strtotime($channel['pubdate'])) ?></lastBuildDate>
+        <lastBuildDate><?php echo date('D, d M Y H:i:s O', strtotime($channel['pubdate'])) ?></lastBuildDate>
         <?php foreach($items as $item): ?>
         <item>
             <title><?php echo $item['title'] ?></title>
             <link><?php echo $item['link'] ?></link>
+            <guid isPermaLink="true"><?php echo $item['link'] ?></guid>
             <description><?php echo $item['description'] ?></description>
             <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/"><?php echo $item['author'] ?>></dc:creator>
-            <pubDate><?php echo date('D, d M Y H:i:s P', strtotime($item['pubdate'])) ?></pubDate>
+            <pubDate><?php echo date('D, d M Y H:i:s O', strtotime($item['pubdate'])) ?></pubDate>
         </item>
         <?php endforeach; ?>
     </channel>

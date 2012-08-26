@@ -4,7 +4,7 @@
         <title><![CDATA[<?php echo $channel['title'] ?>]]></title>
         <link><?php echo $channel['link'] ?></link>
         <description><![CDATA[<?php echo $channel['description'] ?>]]></description>
-        <pubDate><?php echo date('D, d M Y H:i:s P', strtotime($channel['pubdate'])) ?></pubDate>
+        <pubDate><?php echo date('D, d M Y H:i:s O', strtotime($channel['pubdate'])) ?></pubDate>
         <generator>laravel-feed</generator>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <?php foreach($items as $item): ?>
@@ -14,7 +14,7 @@
             <link><?php echo $item['link'] ?></link>
             <guid isPermaLink="true"><?php echo $item['link'] ?></guid>
             <description><![CDATA[<?php echo $item['description'] ?>]]></description>
-            <pubDate><?php echo date('D, d M Y H:i:s P', strtotime($item['pubdate'])) ?></pubDate>
+            <pubDate><?php echo date('D, d M Y H:i:s O', strtotime($item['pubdate'])) ?></pubDate>
         </item>
         <?php endforeach; ?>
     </channel>

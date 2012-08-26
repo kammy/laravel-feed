@@ -45,8 +45,8 @@ Route::get('feed', function(){
         $feed->add($post->title, $post->author, URL::to($post->url), $post->created, $post->description);
     }
     
-    // options: 'rss', 'atom'
-    return $feed->render('rss');
+    // options: 'atom' (recommended) or 'rss'
+    return $feed->render('atom');
     
 });
 
