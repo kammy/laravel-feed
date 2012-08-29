@@ -1,4 +1,8 @@
 <?php
+/**
+ * @name feed.php (part of laravel-feed)
+ * @author Roumen Damianoff <roumen@dawebs.com>
+ */
 
 class Feed
 {
