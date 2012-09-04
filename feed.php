@@ -1,14 +1,17 @@
 <?php
 /**
- * @name feed.php (part of laravel-feed)
+ * Feed generator class for laravel-feed bundle.
+ * 
  * @author Roumen Damianoff <roumen@dawebs.com>
+ * @version 1.1
+ * @link https://github.com/RoumenMe/laravel-feed GitHub
+ * @license http://opensource.org/licenses/mit-license.php MIT License
  */
 
 class Feed
 {
 
     public $items = array();
-
     public $title;
     public $description;
     public $link;
@@ -31,7 +34,7 @@ class Feed
 
 
     /**
-     * Returns aggregated feed with all $items
+     * Returns aggregated feed with all items from $items array
      */
     public function render($format = 'atom')
     {

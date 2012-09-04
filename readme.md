@@ -1,6 +1,6 @@
 # [laravel-feed](http://roumen.me/projects/laravel-feed) bundle
 
-A simple rss feed generator for Laravel.
+A simple feed generator for Laravel.
 
 
 ## Installation
