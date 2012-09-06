@@ -25,18 +25,20 @@ Route::get('feed', function(){
 
     $feed = new Feed();
 
+    // set your feed's title, description, link, pubdate and language
     $feed->title = 'Your title';
     $feed->description = 'Your description';
     $feed->link = URL::to('feed');
     $feed->pubdate = $posts[0]->created;
+    $feed->lang = 'en';
 
     foreach ($posts as $post)
     {
-        // title, author, url, pubdate, description
+        // set item's title, author, url, pubdate and description
         $feed->add($post->title, $post->author, URL::to($post->slug), $post->created, $post->description);
     }
     
-    // options: 'atom' (recommended) or 'rss'
+    // show your feed (options: 'atom' (recommended) or 'rss')
     return $feed->render('atom');
     
 });

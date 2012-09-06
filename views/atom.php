@@ -5,7 +5,7 @@
         <link><?php echo $channel['link'] ?></link>
         <description><?php echo $channel['description'] ?></description>
         <atom:link href="<?php echo $channel['link'] ?>" rel="self"></atom:link>
-        <language><?php echo Config::get('application.language') ?></language>
+        <language><?php echo $channel['lang'] ?></language>
         <lastBuildDate><?php echo date('D, d M Y H:i:s O', strtotime($channel['pubdate'])) ?></lastBuildDate>
         <?php foreach($items as $item): ?>
         <item>
