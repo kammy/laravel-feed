@@ -9,7 +9,7 @@ Install using the Artian CLI:
 
 	php artisan bundle:install feed
 
-then edit ``application/bundles.php`` to autoload messages:
+then edit ``application/bundles.php`` to autoload feed:
 
 ```php
 'feed' => array('auto' => true)
@@ -37,9 +37,9 @@ Route::get('feed', function(){
         // set item's title, author, url, pubdate and description
         $feed->add($post->title, $post->author, URL::to($post->slug), $post->created, $post->description);
     }
-    
+
     // show your feed (options: 'atom' (recommended) or 'rss')
     return $feed->render('atom');
-    
+
 });
 ```
