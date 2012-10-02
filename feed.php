@@ -17,6 +17,7 @@ class Feed
     public $link;
     public $pubdate;
     public $lang;
+    public $charset = 'utf-8';
 
 
     /**
@@ -63,7 +64,7 @@ class Feed
             'lang'=>$this->lang
         );
 
-        return Response::make(Response::view('feed::'.$format, array('items' => $this->items, 'channel' => $channel) ), 200, array('Content-type' => 'text/xml; charset=utf-8'));
+        return Response::make(Response::view('feed::'.$format, array('items' => $this->items, 'channel' => $channel) ), 200, array('Content-type' => 'text/xml; charset='.$this->charset));
     }
 
 }
