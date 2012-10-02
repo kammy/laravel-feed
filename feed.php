@@ -3,7 +3,7 @@
  * Feed generator class for laravel-feed bundle.
  *
  * @author Roumen Damianoff <roumen@dawebs.com>
- * @version 1.2.1
+ * @version 1.3
  * @link http://roumen.me/projects/laravel-feed
  * @license http://opensource.org/licenses/mit-license.php MIT License
  */
@@ -18,6 +18,7 @@ class Feed
     public $pubdate;
     public $lang;
     public $charset = 'utf-8';
+    public $ctype = 'application/atom+xml';
 
 
     /**
@@ -55,6 +56,7 @@ class Feed
         if (empty($this->lang)) $this->lang = Config::get('application.language');
         if (empty($this->link)) $this->link = Config::get('application.url');
         if (empty($this->pubdate)) $this->pubdate = date('D, d M Y H:i:s O');
+        if ($format == 'rss') $this->ctype = 'application/rss+xml';
 
         $channel = array(
             'title'=>$this->title,
@@ -64,7 +66,7 @@ class Feed
             'lang'=>$this->lang
         );
 
-        return Response::make(Response::view('feed::'.$format, array('items' => $this->items, 'channel' => $channel) ), 200, array('Content-type' => 'text/xml; charset='.$this->charset));
+        return Response::make(Response::view('feed::'.$format, array('items' => $this->items, 'channel' => $channel) ), 200, array('Content-type' => $this->ctype.'; charset='.$this->charset));
     }
 
 }
