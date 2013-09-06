@@ -1,4 +1,4 @@
-# [laravel-feed](http://roumen.me/projects/laravel-feed) bundle
+# [laravel-feed](http://roumen.it/projects/laravel-feed) bundle
 
 A simple feed generator for Laravel.
 
