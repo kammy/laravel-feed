@@ -5,11 +5,11 @@ A simple feed generator for Laravel.
 
 ## Installation
 
-Install using the Artian CLI:
+Download the latest bundle from: https://github.com/RoumenDamianoff/laravel-feed/archive/laravel3.zip
 
-	php artisan bundle:install feed
+and extract the archive to your bundles folder.
 
-then edit ``application/bundles.php`` to autoload feed:
+To autoload the bundle you need to edit your ``application/bundles.php`` end add:
 
 ```php
 'feed' => array('auto' => true)
