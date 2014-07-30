@@ -6,6 +6,7 @@
     <id>{{ $channel['link'] }}</id>
     <link rel="alternate" type="text/html" href="{{ $channel['link'] }}" ></link>
     <link rel="self" type="application/atom+xml" href="{{ Request::url() }}" ></link>
+    <link rel="hub" href="http://pubsubhubbub.appspot.com"></link>
     @if (!empty($channel['logo']))
     <logo>{{ $channel['logo'] }}</logo>
     @endif

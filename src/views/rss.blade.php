@@ -5,6 +5,7 @@
         <link>{{ $channel['link'] }}</link>
         <description>{{ $channel['description'] }}</description>
         <atom:link href="{{ Request::url() }}" rel="self"></atom:link>
+        <atom:link rel="hub" href="http://pubsubhubbub.appspot.com" />
         @if (!empty($channel['logo']))
         <image>
             <url>{{ $channel['logo'] }}</url>
